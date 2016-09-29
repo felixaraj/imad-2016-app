@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
-    articleOne: {
+    'article-one': {
         title: `Article-one | Felix Arokiya Raj`,
         heading: `Article-one`,
         date: `September 28, 2016`,
@@ -23,7 +23,7 @@ var articles = {
                     <a href='http://www.7-zip.org/'>7-zip</a> 
                 </p>`
         },
-    articleTwo: {
+    'article-two': {
          title: `Article-two | Felix Arokiya Raj`,
         heading: `Article-two`,
         date: `September 29, 2016`,
@@ -45,7 +45,7 @@ var articles = {
                 </p>`
         
     },
-    articleThree: { 
+    'article-three': { 
         title: `Article-three | Felix Arokiya Raj`,
         heading: `Article-three`,
         date: `SSeptember 28, 2016, 19:30`,
@@ -120,15 +120,16 @@ app.get('/ui/png-sunflower.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'png-sunflower.png'));
 });
 
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+    var articleName = req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
-app.get('/article-two', function (req, res) {
+/*app.get('/article-two', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
 });
 app.get('/article-three', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
+}); */
 
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
