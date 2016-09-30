@@ -1,7 +1,7 @@
 // change the text of the main-text div
 
-// var element = document.getElementById('main-text');
-element.innerHTML = 'Love & Peace to all'; //
+/* var element = document.getElementById('main-text');
+element.innerHTML = 'Love & Peace to all'; */
 
 // moving the image
 
