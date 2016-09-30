@@ -5,7 +5,7 @@ element.innerHTML = 'Love & Peace to all';
 
 // moving the image
 
-var img = document.getElementById('img');
+var img = document.getElementById('oliver');
 img.onclick = function() {
     img.style.marginLeft = '100px';
 };
