@@ -132,6 +132,17 @@ app.get('/ui/png-sunflower.png', function (req, res) {
 app.get('/:articleName', function (req, res) {
     var articleName = req.params.articleName;
   res.send(createTemplate(articles[articleName]));
+  
+app.get('/submit-name', function(req, res) {
+    //url: /submit-name?name=xxx
+    //Get the name from the request
+    
+    var name = req.query.name;
+    names.Push(name);
+    //JSON: Javascript Object Notation
+    res.send(JSON.stringify(name));
+})  
+ 
 });
 /*app.get('/article-two', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
