@@ -1,3 +1,16 @@
+// counter code
+var button = document.getElementById('counter');
+var counter = 0;
+
+button.onclick = function() {
+    
+    // Render the variable in the correct span
+    counter = counter + 1;
+    var span = document.getElementById('count');
+    span.innerHTML = counter.toString();
+    
+    };
+
 // change the text of the main-text div
 
 /* var element = document.getElementById('main-text');
@@ -5,7 +18,7 @@ element.innerHTML = 'Love & Peace to all'; */
 
 // moving the image
 
-var img = document.getElementById('oliver');
+/*var img = document.getElementById('oliver');
 
 var marginLeft = 0;
 function moveRight() {
@@ -21,4 +34,4 @@ img.onclick = function() {
     img.style.marginLeft = '100px';
 }; */
 
-console.log('Felix Arokiya Raj! God Bless You all');
+/*console.log('Felix Arokiya Raj! God Bless You all');*/
