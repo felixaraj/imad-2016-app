@@ -33,8 +33,28 @@ button.onclick = function() {
     var name = nameInput.value;
     var submit = document.getElementById('submit_btn');
     submit.onclick = function() {
-        // Make a request to the server and send the name
-        
+        // create a request object
+    var request = new XMLHttpRequest();
+    
+    //capture the response & store it in a variable
+    request.onreadystatechange = function () {
+        if(request.readyState === XMLHttpRequest.DONE){
+             // Take some action
+        if (request.status === 200){
+        var counter = request.responseText;
+        counter = counter + 1;
+        var span = document.getElementById('count');
+        span.innerHTML = counter.toString();
+         }
+            {
+             //not done yet
+            }
+        }
+    };
+    
+    // Make the request
+    request.open('GET', 'http://felixaraj.imad.hasura-app.io/counter', true);
+    request.send(null);
         //Capture a list of names & render it as a list
         var names = ['name1', 'name2', 'name3'];
         var list = '';
