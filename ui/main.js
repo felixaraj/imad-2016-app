@@ -41,10 +41,14 @@ button.onclick = function() {
         if(request.readyState === XMLHttpRequest.DONE){
              // Take some action
         if (request.status === 200){
-        var counter = request.responseText;
-        counter = counter + 1;
-        var span = document.getElementById('count');
-        span.innerHTML = counter.toString();
+        //Capture a list of names & render it as a list
+        var names = ['name1', 'name2', 'name3'];
+        var list = '';
+        for (var i=0; i<names.length; i++) {
+            list +='<li>' + name[i] + '</li>' ;
+        }
+        var ul = document.getElementById('namelist');
+        ul.innerHTML = list;
          }
             {
              //not done yet
@@ -55,14 +59,6 @@ button.onclick = function() {
     // Make the request
     request.open('GET', 'http://felixaraj.imad.hasura-app.io/counter', true);
     request.send(null);
-        //Capture a list of names & render it as a list
-        var names = ['name1', 'name2', 'name3'];
-        var list = '';
-        for (var i=0; i<names.length; i++) {
-            list +='<li>' + name[i] + '</li>' ;
-        }
-        var ul = document.getElementById('namelist');
-        ul.innerHTML = list;
         
     };
 
